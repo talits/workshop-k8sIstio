@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp-v2
+  namespace: workshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeapp
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: nodeapp
+        version: v2
+    spec:
+      containers:
+      - name: nodeapp
+        image: talits/v2:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
