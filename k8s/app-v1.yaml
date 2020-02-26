@@ -8,7 +8,6 @@ spec:
   selector:
     matchLabels:
       app: nodeapp
-      version: v1
   template:
     metadata:
       labels:
@@ -19,9 +18,12 @@ spec:
       - name: nodeapp
         image: talits/v1:latest
         imagePullPolicy: Always
-        limits:
-          resources:
-            cpu: 100mi
-            mem: 512Mi
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 3000

@@ -1,8 +1,8 @@
-var express = require('express');
-var path = require('path');
-var index = require('./routes/index');
+let express = require('express');
+let path = require('path');
+let index = require('./routes/index');
 
-var app = express();
+let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));

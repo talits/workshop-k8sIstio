@@ -1,8 +1,8 @@
-var app = require('./app');
-var http = require('http');
-var port = process.env.PORT || 3000;
+let app = require('./app');
+let http = require('http');
+let port = process.env.PORT || 3000;
 
 app.set('port', port);
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 server.listen(port);
